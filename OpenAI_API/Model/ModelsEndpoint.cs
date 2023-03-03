@@ -10,16 +10,16 @@ namespace OpenAI_API.Models
 	/// </summary>
 	public class ModelsEndpoint : EndpointBase
 	{
-		/// <summary>
-		/// The name of the endpoint, which is the final path segment in the API URL.  For example, "models".
-		/// </summary>
-		protected override string Endpoint { get { return "models"; } }
+        /// <summary>
+        /// The name of the endpoint, which is the final path segment in the API URL.  For example, "models".
+        /// </summary>
+        protected override string Endpoint => "models";
 
-		/// <summary>
-		/// Constructor of the api endpoint.  Rather than instantiating this yourself, access it through an instance of <see cref="OpenAIAPI"/> as <see cref="OpenAIAPI.Models"/>.
-		/// </summary>
-		/// <param name="api"></param>
-		internal ModelsEndpoint(OpenAIAPI api) : base(api) { }
+        /// <summary>
+        /// Constructor of the api endpoint.  Rather than instantiating this yourself, access it through an instance of <see cref="OpenAIAPI"/> as <see cref="OpenAIAPI.Models"/>.
+        /// </summary>
+        /// <param name="api"></param>
+        internal ModelsEndpoint(OpenAIAPI api) : base(api) { }
 
 		/// <summary>
 		/// Get details about a particular Model from the API, specifically properties such as <see cref="Model.OwnedBy"/> and permissions.

@@ -16,16 +16,16 @@ namespace OpenAI_API.Completions
 		/// </summary>
 		public CompletionRequest DefaultCompletionRequestArgs { get; set; } = new CompletionRequest() { Model = Model.DavinciText };
 
-		/// <summary>
-		/// The name of the endpoint, which is the final path segment in the API URL.  For example, "completions".
-		/// </summary>
-		protected override string Endpoint { get { return "completions"; } }
+        /// <summary>
+        /// The name of the endpoint, which is the final path segment in the API URL.  For example, "completions".
+        /// </summary>
+        protected override string Endpoint => "completions";
 
-		/// <summary>
-		/// Constructor of the api endpoint.  Rather than instantiating this yourself, access it through an instance of <see cref="OpenAIAPI"/> as <see cref="OpenAIAPI.Completions"/>.
-		/// </summary>
-		/// <param name="api"></param>
-		internal CompletionEndpoint(OpenAIAPI api) : base(api) { }
+        /// <summary>
+        /// Constructor of the api endpoint.  Rather than instantiating this yourself, access it through an instance of <see cref="OpenAIAPI"/> as <see cref="OpenAIAPI.Completions"/>.
+        /// </summary>
+        /// <param name="api"></param>
+        internal CompletionEndpoint(OpenAIAPI api) : base(api) { }
 
 		#region Non-streaming
 

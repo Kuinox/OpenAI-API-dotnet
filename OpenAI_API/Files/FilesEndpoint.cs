@@ -17,17 +17,17 @@ namespace OpenAI_API.Files
 		/// <param name="api"></param>
 		internal FilesEndpoint(OpenAIAPI api) : base(api) { }
 
-		/// <summary>
-		/// The name of the endpoint, which is the final path segment in the API URL.  For example, "files".
-		/// </summary>
-		protected override string Endpoint { get { return "files"; } }
+        /// <summary>
+        /// The name of the endpoint, which is the final path segment in the API URL.  For example, "files".
+        /// </summary>
+        protected override string Endpoint => "files";
 
-		/// <summary>
-		/// Get the list of all files
-		/// </summary>
-		/// <returns></returns>
-		/// <exception cref="HttpRequestException"></exception>
-		public async Task<List<File>> GetFilesAsync()
+        /// <summary>
+        /// Get the list of all files
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="HttpRequestException"></exception>
+        public async Task<List<File>> GetFilesAsync()
 		{
 			return (await HttpGet<FilesData>()).Data;
 		}

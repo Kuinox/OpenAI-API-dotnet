@@ -13,16 +13,16 @@ namespace OpenAI_API.Embedding
 		/// </summary>
 		public EmbeddingRequest DefaultEmbeddingRequestArgs { get; set; } = new EmbeddingRequest() { Model = Model.AdaTextEmbedding };
 
-		/// <summary>
-		/// The name of the endpoint, which is the final path segment in the API URL.  For example, "embeddings".
-		/// </summary>
-		protected override string Endpoint { get { return "embeddings"; } }
+        /// <summary>
+        /// The name of the endpoint, which is the final path segment in the API URL.  For example, "embeddings".
+        /// </summary>
+        protected override string Endpoint => "embeddings";
 
-		/// <summary>
-		/// Constructor of the api endpoint.  Rather than instantiating this yourself, access it through an instance of <see cref="OpenAIAPI"/> as <see cref="OpenAIAPI.Embeddings"/>.
-		/// </summary>
-		/// <param name="api"></param>
-		internal EmbeddingEndpoint(OpenAIAPI api) : base(api) { }
+        /// <summary>
+        /// Constructor of the api endpoint.  Rather than instantiating this yourself, access it through an instance of <see cref="OpenAIAPI"/> as <see cref="OpenAIAPI.Embeddings"/>.
+        /// </summary>
+        /// <param name="api"></param>
+        internal EmbeddingEndpoint(OpenAIAPI api) : base(api) { }
 
 		/// <summary>
 		/// Ask the API to embedd text using the default embedding model <see cref="Model.AdaTextEmbedding"/>

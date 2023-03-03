@@ -1,4 +1,5 @@
-﻿using OpenAI_API.Completions;
+﻿using OpenAI_API.ChatCompletions;
+using OpenAI_API.Completions;
 using OpenAI_API.Embedding;
 using OpenAI_API.Files;
 using OpenAI_API.Models;
@@ -35,6 +36,7 @@ namespace OpenAI_API
 		public OpenAIAPI(APIAuthentication apiKeys = null)
 		{
 			this.Auth = apiKeys.ThisOrDefault();
+			ChatCompletion = new ChatCompletionEndpoint(this);
 			Completions = new CompletionEndpoint(this);
 			Models = new ModelsEndpoint(this);
 			Files = new FilesEndpoint(this);
@@ -55,6 +57,8 @@ namespace OpenAI_API
 			api.ApiUrlFormat = $"https://{YourResourceName}.openai.azure.com/openai/deployments/{deploymentId}/" + "{1}?api-version={0}";
 			return api;
 		}
+
+		public ChatCompletionEndpoint ChatCompletion { get; }
 
 		/// <summary>
 		/// Text generation is the core function of the API. You give the API a prompt, and it generates a completion. The way you “program” the API to do a task is by simply describing the task in plain english or providing a few written examples. This simple approach works for a wide range of use cases, including summarization, translation, grammar correction, question answering, chatbots, composing emails, and much more (see the prompt library for inspiration).

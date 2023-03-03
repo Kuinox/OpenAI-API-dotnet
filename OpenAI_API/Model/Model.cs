@@ -118,10 +118,12 @@ namespace OpenAI_API.Models
 		/// </summary>
 		public static Model DavinciText => new Model("text-davinci-003") { OwnedBy = "openai" };
 
-		/// <summary>
-		/// Almost as capable as Davinci Codex, but slightly faster. This speed advantage may make it preferable for real-time applications.
-		/// </summary>
-		public static Model CushmanCode => new Model("code-cushman-001") { OwnedBy = "openai" };
+        public static Model GPT35Turbo => new Model("gpt-3.5-turbo");
+
+        /// <summary>
+        /// Almost as capable as Davinci Codex, but slightly faster. This speed advantage may make it preferable for real-time applications.
+        /// </summary>
+        public static Model CushmanCode => new Model("code-cushman-001") { OwnedBy = "openai" };
 
 		/// <summary>
 		/// Most capable Codex model. Particularly good at translating natural language to code. In addition to completing code, also supports inserting completions within code.
