@@ -1,10 +1,10 @@
-﻿namespace OpenAI_API.ChatCompletions
+namespace OpenAI_API.ChatCompletions
 {
     public class MessageRole
     {
-        public string System => "system";
-        public string User => "user";
-        public string Assistant => "assistant";
+        public static string System => "system";
+        public static string User => "user";
+        public static string Assistant => "assistant";
     }
 }
 
