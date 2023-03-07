@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
 using OpenAI_API.Completions;
 using System;
 using System.Collections.Generic;
@@ -23,8 +23,17 @@ namespace OpenAI_API.ChatCompletions
 		[JsonProperty("index")]
         public int Index { get; set; }
 		[JsonProperty("message")]
-        public ChatMessage Message { get; set; }
+        public ChatMessage? Message { get; set; }
 		[JsonProperty("finish_reason")]
-        public string FinishReason { get; set; }
+        public string? FinishReason { get; set; }
+
+        [JsonProperty("delta")]
+        public ChoiceDelta? Delta { get; set; }
+    }
+
+    public class ChoiceDelta
+    {
+		[JsonProperty("content")]
+        public string Content { get; set; }
     }
 }
